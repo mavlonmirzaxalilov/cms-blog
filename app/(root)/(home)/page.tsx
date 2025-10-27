@@ -1,4 +1,6 @@
+import BlogCard from '@/components/cards/Blog'
 import BgArrow from "@/components/shared/bg-arrow";
+import { blogs } from "@/constants";
 import React from "react";
 
 function Homepage() {
@@ -13,6 +15,12 @@ function Homepage() {
       <h2 className="section-title text-center font-creteRound text-4xl">
         <span>Recent posts</span>
       </h2>
+
+      <div className="mt-24 flex flex-col space-y-24">
+        {blogs.map((blog) => (
+          <BlogCard key={blog.title} {...blog}/>
+        ))}
+      </div>
     </div>
   );
 }
